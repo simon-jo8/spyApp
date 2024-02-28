@@ -210,13 +210,6 @@ export default {
     justify-content: space-between;
   }
 
-  span.icon-location {
-    color: white;
-    font-size: 80px;
-    font-weight: bold;
-    margin-top: -5px;
-  }
-
   .button-next {
     position: absolute;
     display: flex;
@@ -262,6 +255,13 @@ export default {
     margin: 5px 0 0 5px;
   }
 
+  span.icon-location {
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 2px;
+  }
+
   .location {
     display: flex;
     flex-direction: row;
@@ -277,13 +277,14 @@ export default {
   }
 
   .location h2 {
-    font-size: 18px;
+    font-size: 16px;
+    font-weight: bold;
     margin-left: 10px;
   }
 
   .modal-content .mission-name, .teammate-name, .mission-description {
     margin-top: 15px;
-    font-size: 20px;
+    font-size: 18px;
   }
 
   .mission-name span {
@@ -339,20 +340,20 @@ export default {
     display: flex;
     align-items: flex-end;
     justify-content: center;
-    min-width: 90px;
-    min-height: 90px;
+    min-width: 100px;
+    min-height: 100px;
     border: 2px solid #22BEEF;
     border-radius: 300px;
   }
 
   .suspects-list li .suspect-image-container img {
-    width: 70px;
+    width: 80px;
     margin-bottom: 2px;
   }
 
   .suspects-list li p {
     margin-left: 20px;
-    font-size: 16px;
+    font-size: 15px;
   }
 
   .suspects-list li p span {
