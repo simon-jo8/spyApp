@@ -1,0 +1,395 @@
+<template>
+  <div class="about">
+    <img src="../assets/images/scenario1.jpg" class="image-container" style="right: 15vw; top: 32vh" @click="openModal">
+    <img src="../assets/images/scenario1.jpg" class="image-container" style="left: 10vw; top: 32vh" @click="openModal">
+    <img src="../assets/images/scenario1.jpg" class="image-container" style="left: 27vw; top: 60vh" @click="openModal">
+    <img src="../assets/images/scenario1.jpg" class="image-container" style="left: 47vw; top: 75vh" @click="openModal">
+  </div>
+
+  <!-- Modal -->
+  <div class="modal" v-if="modalOpen">
+  <img src="../assets/images/Character.png" class="character-right">
+
+    <!-- Modal Scenario Intro -->
+    <div v-if="currentModal === 1" class="modal-content">
+      <div class="modal-header">
+        <div class="location">
+          <span class="icon-location">&loz;</span>
+          <h2>San Francisco</h2>
+        </div>
+        <span class="close" @click="closeModal">&times;</span>
+      </div>
+      <p class="mission-name">
+        <span>Intitulé de la mission</span>
+         : Explosion du bureau des banques nationals
+      </p>
+      <p class="teammate-name">
+        <span>Coéquipier(re)</span>
+         : Kimberley
+      </p>
+      <div class="mission-description">
+        <p>
+          <span>Description</span>
+         :  Dans cette mission cruciale, l'agent secret est dépêché pour enquêter sur l'explosion énigmatique à la Banque Nationale des États-Unis. Le chaos qui en a résulté a plongé les autorités dans la confusion, mettant en péril la sécurité nationale. Naviguant avec prudence à travers les décombres et les secrets, l'agent doit percer le mystère et démêler les conspirations qui entourent cet événement. Avec pour seule certitude l'urgence de découvrir la vérité, il doit faire preuve de sang-froid, d'ingéniosité et de détermination pour rétablir l'ordre et la sécurité dans un pays plongé dans l'incertitude.
+        </p>
+        <img src="../assets/images/scenario1.jpg">
+      </div>
+      <button class="button-next" @click="nextModal">
+        Suivant
+      </button>
+    </div>
+
+    <!-- Modal List of Suspects -->
+    <div v-else-if="currentModal === 2" class="modal-content">
+      <div class="modal-header">
+        <h1>Liste des suspects</h1>
+        <span class="close" @click="closeModal">&times;</span>
+      </div>
+      <ul class="suspects-list">
+        <li>
+          <div class="suspect-image-container">
+            <img src="../assets/images/suspect1.png">
+          </div>
+          <p>
+            <span>Kevin Roberts</span> : Kevin est un entrepreneur en construction bien établi, spécialisé dans les projets immobiliers de grande envergure. Il est connu pour son tempérament colérique et son mécontentement envers le gouvernement et les entreprises. Certains pensent qu'il aurait pu planifier l'explosion de la banque comme un acte de rébellion contre le système financier.
+          </p>
+        </li>
+        <li>
+          <div class="suspect-image-container">
+            <img src="../assets/images/suspect1.png">
+          </div>
+          <p>
+            <span>Kevin Roberts</span> : Kevin est un entrepreneur en construction bien établi, spécialisé dans les projets immobiliers de grande envergure. Il est connu pour son tempérament colérique et son mécontentement envers le gouvernement et les entreprises. Certains pensent qu'il aurait pu planifier l'explosion de la banque comme un acte de rébellion contre le système financier.
+          </p>
+        </li>
+        <li>
+          <div class="suspect-image-container">
+            <img src="../assets/images/suspect1.png">
+          </div>
+          <p>
+            <span>Kevin Roberts</span> : Kevin est un entrepreneur en construction bien établi, spécialisé dans les projets immobiliers de grande envergure. Il est connu pour son tempérament colérique et son mécontentement envers le gouvernement et les entreprises. Certains pensent qu'il aurait pu planifier l'explosion de la banque comme un acte de rébellion contre le système financier.
+          </p>
+        </li>
+        <li>
+          <div class="suspect-image-container">
+            <img src="../assets/images/suspect1.png">
+          </div>
+          <p>
+            <span>Kevin Roberts</span> : Kevin est un entrepreneur en construction bien établi, spécialisé dans les projets immobiliers de grande envergure. Il est connu pour son tempérament colérique et son mécontentement envers le gouvernement et les entreprises. Certains pensent qu'il aurait pu planifier l'explosion de la banque comme un acte de rébellion contre le système financier.
+          </p>
+        </li>
+      </ul>
+      <button class="button-next" @click="nextModal">
+        Suivant
+      </button>
+    </div>
+
+    <!-- Modal Scenario Locations -->
+    <div v-else-if="currentModal === 3" class="modal-content">
+      <div class="modal-header">
+        <h1>Lieux d'intervention</h1>
+        <span class="close" @click="closeModal">&times;</span>
+      </div>
+      <img src="../assets/images/city-locations.png" class="city-locations">
+      <button class="button-next" @click="nextModal">
+        Suivant
+      </button>
+    </div>
+
+    <!-- Modal Start Scenario -->
+    <div v-else-if="currentModal === 4" class="modal-content">
+      <div class="modal-header-empty">
+        <span class="close" @click="closeModal">&times;</span>
+      </div>
+      <div class="centered-content">
+        <button class="start-button" @click="startScenario">Commencer</button>
+      </div>
+    </div>
+
+  </div>
+</template>
+
+
+<script>
+export default {
+  data() {
+    return {
+      modalOpen: false,
+      currentModal: 1
+    };
+  },
+  methods: {
+    openModal() {
+      this.modalOpen = true;
+    },
+    closeModal() {
+      this.modalOpen = false;
+      this.currentModal = 1;
+    },
+    nextModal() {
+      if (this.currentModal < 4) {
+        this.currentModal++;
+      }
+    },
+    startScenario() {
+      alert("Paye si tu veux jouer 😀😀😀😀")
+    }
+  }
+};
+</script>
+
+<!-- CSS Map -->
+<style scoped>
+  .about {
+    width: 100vw;
+    height: 100vh;
+    background-image: url('../assets/images/world-map.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+
+  .image-container {
+    position: absolute;
+    width: 10%;
+    height: 12%;
+    object-fit: cover;
+    border: 2px solid white;
+    cursor: pointer;
+    transition: .2s all ease-in-out;
+  }
+
+  img.image-container:hover {
+    transform: scale(1.5);
+  }
+
+</style>
+
+<!-- CSS Modal -->
+<style scoped>
+  .character-right {
+    position: absolute;
+    left: -1vw;
+    top: 15vh;
+    height: 100%;
+    z-index: 1;
+  }
+
+  .modal {
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+  }
+
+  .modal-content {
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 15px 30px 30px 30px;
+    border: 1px solid #888;
+    width: 52vw;
+    height: 65vh;
+    position: relative;
+    z-index: 0;
+    border: 5px solid #22BEEF;
+    border-top: 5px dashed #22BEEF;
+    border-left: 5px dashed #22BEEF; 
+    outline: 5px solid #22BEEF;
+    outline-offset: -17px;
+    border-radius: 30px;
+  }
+
+  .modal-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  span.icon-location {
+    color: white;
+    font-size: 80px;
+    font-weight: bold;
+    margin-top: -5px;
+  }
+
+  .button-next {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    bottom: -40px;
+    right: -40px;
+    border: 5px dashed #22BEEF;
+    border-radius: 300px;
+    background: black;
+    font-size: 18px;
+    font-weight: bolder;
+    color: #22BEEF;
+    cursor: pointer;
+    transition: .2s all ease-in-out;
+  }
+
+  .button-next:hover, .button-next:focus {
+    background: #092731;
+  }
+
+  .close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: #22BEEF;
+    text-decoration: none;
+    cursor: pointer;
+  }
+</style>
+
+<!-- CSS Modal Scenario Intro -->
+<style scoped>
+  .modal-header h1 {
+    font-size: 35px;
+    margin: 5px 0 0 5px;
+  }
+
+  .location {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px 20px;
+    background: #d9d9d949;
+    border-radius: 10px;
+    margin-top: 15px;
+  }
+
+  .location span {
+    color: white;
+  }
+
+  .location h2 {
+    font-size: 18px;
+    margin-left: 10px;
+  }
+
+  .modal-content .mission-name, .teammate-name, .mission-description {
+    margin-top: 15px;
+    font-size: 20px;
+  }
+
+  .mission-name span {
+    font-weight: bolder;
+  }
+
+  .teammate-name span {
+    font-weight: bolder;
+  }
+
+  .mission-description {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .mission-description p {
+    max-width: 80%;
+  }
+
+  .mission-description p span {
+    font-weight: bolder;
+  }
+
+  .mission-description img {
+    width: 400px;
+    height: 350px;
+    max-width: 400px;
+    max-height: 400px;
+    margin-left: 30px;
+    object-fit: cover;
+    border: 3px solid transparent;
+    border-image: linear-gradient(to bottom right, #22BEEF, #ffffff) 1;
+  }
+</style>
+
+<!-- CSS Modal List of Suspects -->
+<style scoped>
+  .suspects-list {
+    margin-top: 20px;
+    list-style: none;
+  }
+
+  .suspects-list li {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-top: 20px;
+  }
+
+  .suspects-list li .suspect-image-container {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    min-width: 90px;
+    min-height: 90px;
+    border: 2px solid #22BEEF;
+    border-radius: 300px;
+  }
+
+  .suspects-list li .suspect-image-container img {
+    width: 70px;
+    margin-bottom: 2px;
+  }
+
+  .suspects-list li p {
+    margin-left: 20px;
+    font-size: 16px;
+  }
+
+  .suspects-list li p span {
+    font-weight: bold;
+  }
+</style>
+
+<!-- CSS Modal City Locations -->
+<style scoped>
+  .city-locations {
+    margin-top: 10px;
+    width: 100%;
+  }
+</style>
+
+<!-- CSS Modal Start Scenario -->
+<style scoped>
+  .centered-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100% - 40px);
+  }
+
+  .centered-content button {
+    background: black;
+    border: 5px solid transparent;
+    font-size: 40px;
+    font-weight: bolder;
+    padding: 10px 70px;
+    color: #22BEEF;
+    border-image: linear-gradient(to right, #22BEEF, #ffffff) 1;
+    transition: .2s all ease-in-out;
+    cursor: pointer;
+  }
+
+  .centered-content button:hover {
+    transform: scale(1.2);
+  }
+</style>
