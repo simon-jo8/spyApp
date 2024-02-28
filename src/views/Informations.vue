@@ -34,6 +34,7 @@
 
 <script setup>
 import { ref } from "vue";
+import { useRouter } from "vue-router";
 import Player from "@/components/Player.vue";
 import { usePlayerStore } from "@/store/Player";
 import axios from "redaxios";
@@ -45,6 +46,8 @@ const age = ref("");
 const city = ref("");
 const agencies = ref("");
 const role = ref(playerStore.role);
+
+const router = useRouter();
 
 const submit = () => {
   axios
@@ -70,6 +73,7 @@ const submit = () => {
     )
     .then((response) => {
       console.log(response);
+      router.push("/scenarios");
     })
     .catch((error) => {
       console.log(error);
