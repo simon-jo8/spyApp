@@ -49,7 +49,7 @@
       </p>
       <div class="mission-description">
         <p>
-          <span>Description</span>
+          <span>Description : </span>
           {{ description }}
         </p>
         <img src="../assets/images/scenario1.jpg" />
@@ -229,7 +229,7 @@ img.image-container:hover {
   position: absolute;
   left: -1vw;
   top: 15vh;
-  height: 100%;
+  height: 80%;
   z-index: 1;
 }
 
@@ -360,22 +360,23 @@ span.icon-location {
 .mission-description {
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
+  align-items: center;
 }
 
 .mission-description p {
   max-width: 80%;
+  overflow: auto;
+  max-height: 400px;
 }
 
 .mission-description p span {
+  font-size: 18px;
   font-weight: bolder;
 }
 
 .mission-description img {
-  width: 400px;
-  height: 350px;
-  max-width: 400px;
-  max-height: 400px;
+  max-width: 45%;
+  max-height: 45%;
   margin-left: 30px;
   object-fit: cover;
   border: 3px solid transparent;
