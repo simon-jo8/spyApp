@@ -4,19 +4,19 @@
       src="../assets/images/scenario1.jpg"
       class="image-container"
       style="right: 15vw; top: 32vh"
-      @click="openModal(1)"
+      @click="openModal(0)"
     />
     <img
       src="../assets/images/scenario1.jpg"
       class="image-container"
       style="left: 10vw; top: 32vh"
-      @click="openModal(2)"
+      @click="openModal(1)"
     />
     <img
       src="../assets/images/scenario1.jpg"
       class="image-container"
       style="left: 27vw; top: 60vh"
-      @click="openModal(3)"
+      @click="openModal(2)"
     />
     <img
       src="../assets/images/scenario1.jpg"
@@ -41,7 +41,7 @@
       </div>
       <p class="mission-name">
         <span>Intitulé de la mission</span>
-        : Explosion du bureau des banques nationals
+        : {{ title }}
       </p>
       <p class="teammate-name">
         <span>Coéquipier(re)</span>
@@ -152,6 +152,7 @@ export default {
       currentModal: 1,
       mission: [],
       description: "",
+      title: "",
     };
   },
 
@@ -181,6 +182,7 @@ export default {
       console.log(this.mission);
       this.modalOpen = true;
       this.description = this.mission[id].description;
+      this.title = this.mission[id].title;
     },
     closeModal() {
       this.modalOpen = false;
