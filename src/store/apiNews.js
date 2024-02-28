@@ -42,7 +42,7 @@ export const useNewsStore = defineStore("News", {
               );
               let scenarioDesc = response.data.choices[0].message.content;
               scenarioDescList.push(scenarioDesc);
-              this.scenarios.push({scenarioDesc: scenarioDesc});
+              this.scenarios.push({title: titles[i] ,scenarioDesc: scenarioDesc});
               this.scenarioDesc.push(scenarioDesc);
               this.loadingState = 3;
             }
