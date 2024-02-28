@@ -4,25 +4,25 @@
       src="../assets/images/scenario1.jpg"
       class="image-container"
       style="right: 15vw; top: 32vh"
-      @click="openModal(0)"
-    />
-    <img
-      src="../assets/images/scenario1.jpg"
-      class="image-container"
-      style="left: 10vw; top: 32vh"
       @click="openModal(1)"
     />
     <img
       src="../assets/images/scenario1.jpg"
       class="image-container"
-      style="left: 27vw; top: 60vh"
+      style="left: 10vw; top: 32vh"
       @click="openModal(2)"
     />
     <img
       src="../assets/images/scenario1.jpg"
       class="image-container"
-      style="left: 47vw; top: 75vh"
+      style="left: 27vw; top: 60vh"
       @click="openModal(3)"
+    />
+    <img
+      src="../assets/images/scenario1.jpg"
+      class="image-container"
+      style="left: 47vw; top: 75vh"
+      @click="openModal(4)"
     />
   </div>
 
