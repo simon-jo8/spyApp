@@ -229,8 +229,8 @@ img.image-container:hover {
 <style scoped>
 .character-right {
   position: absolute;
-  left: -1vw;
-  top: 15vh;
+  left: -2vw;
+  bottom: 0;
   height: 80%;
   z-index: 1;
 }
