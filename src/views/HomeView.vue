@@ -1,9 +1,16 @@
 <script setup>
-import TheWelcome from '../components/TheWelcome.vue'
+import { ref, onMounted } from "vue";
+import { useNewsStore } from "@/store/apiNews";
+
+const newsStore = useNewsStore();
+
+onMounted(() => {
+  newsStore.fetchNews();
+});
 </script>
 
 <template>
   <main>
-    <TheWelcome />
+    {{ newsStore.news }}
   </main>
 </template>
