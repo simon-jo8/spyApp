@@ -30,6 +30,11 @@ const props = defineProps({
     width: 75%;
     display: flex;
     justify-content: center;
+    transition: .3s all ease-in-out;
+  }
+
+  img:hover {
+    transform: scale(1.1);
   }
 }
 </style>
