@@ -39,20 +39,22 @@
         </div>
         <span class="close" @click="closeModal">&times;</span>
       </div>
-      <p class="mission-name">
-        <span>Intitulé de la mission</span>
-        : {{ title }}
-      </p>
-      <p class="teammate-name">
-        <span>Coéquipier(e)</span>
-        : Kimberley
-      </p>
-      <div class="mission-description">
-        <p>
-          <span>Description : </span>
-          {{ description }}
+      <div class="modal-container">
+        <p class="mission-name">
+          <span>Intitulé de la mission</span>
+          : {{ title }}
         </p>
-        <img src="../assets/images/scenario1.jpg" />
+        <p class="teammate-name">
+          <span>Coéquipier(e)</span>
+          : Kimberley
+        </p>
+        <div class="mission-description">
+          <p>
+            <span>Description : </span>
+            {{ description }}
+          </p>
+          <img src="../assets/images/scenario1.jpg" />
+        </div>
       </div>
       <button class="button-next" @click="nextModal">Suivant</button>
     </div>
@@ -261,14 +263,20 @@ img.image-container:hover {
   outline: 5px solid #22beef;
   outline-offset: -17px;
   border-radius: 30px;
-  overflow: scroll;
-  //overflow: hidden;
 }
 
 .modal-header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  position: absolute;
+  width: 46vw;
+}
+
+.modal-container, .suspects-list, .city-locations{
+  overflow: scroll;
+  height: 50vh;
+  margin-top: 9vh;
 }
 
 .button-next {
@@ -387,7 +395,6 @@ span.icon-location {
 <!-- CSS Modal List of Suspects -->
 <style scoped>
 .suspects-list {
-  margin-top: 20px;
   list-style: none;
 }
 
@@ -427,7 +434,6 @@ span.icon-location {
 <!-- CSS Modal City Locations -->
 <style scoped>
 .city-locations {
-  margin-top: 10px;
   width: 100%;
 }
 </style>
