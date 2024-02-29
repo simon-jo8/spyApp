@@ -286,8 +286,8 @@ img.image-container:hover {
   justify-content: center;
   width: 100px;
   height: 100px;
-  bottom: 111px;
-  right: 249px;
+  bottom: 8vw;
+  right: 21%;
   border: 5px dashed #22beef;
   border-radius: 300px;
   background: black;
