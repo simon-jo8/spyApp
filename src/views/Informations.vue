@@ -12,7 +12,7 @@
         <input id="name" type="text" v-model="name" />
         <label for="gender">Civilité</label>
         <select id="gender" type="text" v-model="gender">
-          <option value="choisir une option">choisir une option</option>
+          <option value="choisir une option" disabled>Choisir une option</option>
           <option value="Monsieur">Monsieur</option>
           <option value="Madame">Madame</option>
         </select>
@@ -22,7 +22,7 @@
         <input id="city" type="text" v-model="city" />
         <label for="agencies">Agence</label>
         <select id="agencies" type="text" v-model="agencies">
-          <option value="choisir une option">choisir une option</option>
+          <option value="choisir une option" disabled>Choisir une option</option>
           <option value="US ARMY">US ARMY</option>
           <option value="CIA">CIA</option>
         </select>
@@ -88,7 +88,7 @@ main {
   background-size: cover;
   background-position: center;
 
-  height: 100vh;
+  min-height: 100vh;
   width: 100vw;
 
   .ChooseRole {
@@ -126,7 +126,8 @@ main {
         padding: 10px 20px;
         border-radius: 7px;
         cursor: pointer;
-        margin-top: 5%;
+        margin-top: 2%;
+        margin-bottom: 5%;
       }
     }
   }
