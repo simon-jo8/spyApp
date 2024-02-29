@@ -26,6 +26,7 @@ import { useRouter } from "vue-router";
 const playerStore = usePlayerStore();
 const router = useRouter();
 
+// Function to choose the player role
 const choosePlayer = (role) => {
   playerStore.role = role;
   router.push("/informations");

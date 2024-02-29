@@ -49,6 +49,7 @@ const role = ref(playerStore.role);
 
 const router = useRouter();
 
+// Function to submit the form
 const submit = () => {
   axios
     .post(
