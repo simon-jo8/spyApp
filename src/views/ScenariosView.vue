@@ -1,25 +1,25 @@
 <template>
   <div class="about">
     <img
-      src="../assets/images/scenario1.jpg"
+      src="../assets/img-scenario/budapest/floor-plan.jpg"
       class="image-container"
-      style="right: 15vw; top: 32vh"
+      style="right: 35vw; top: 32vh"
       @click="openModal(0)"
     />
     <img
-      src="../assets/images/scenario1.jpg"
+      src="../assets/img-scenario/tour-eiffel/floor-plan.png"
       class="image-container"
-      style="left: 10vw; top: 32vh"
+      style="left: 42vw; top: 32vh"
       @click="openModal(1)"
     />
     <img
-      src="../assets/images/scenario1.jpg"
+      src="../assets/img-scenario/siege-cia/floor-plan.png"
       class="image-container"
-      style="left: 27vw; top: 60vh"
+      style="left: 17vw; top: 35vh"
       @click="openModal(2)"
     />
     <img
-      src="../assets/images/scenario1.jpg"
+      src="../assets/img-scenario/renault/floor-plan.png"
       class="image-container"
       style="left: 47vw; top: 75vh"
       @click="openModal(4)"
@@ -53,7 +53,7 @@
             <span>Description : </span>
             {{ description }}
           </p>
-          <img src="../assets/images/scenario1.jpg" />
+          <img :src="imgBattlePlanMission" />
         </div>
       </div>
       <button class="button-next" @click="nextModal">Suivant</button>
@@ -146,6 +146,10 @@
 
 <script>
 import axios from "redaxios";
+import tourEiffel from "../assets/img-scenario/tour-eiffel/battle-plan.png";
+import siegeCia from "../assets/img-scenario/siege-cia/battle-plan.png";
+import renault from "../assets/img-scenario/renault/battle-plan.png";
+import budapest from "../assets/img-scenario/budapest/battle-plan.png";
 
 export default {
   data() {
@@ -155,13 +159,20 @@ export default {
       mission: [],
       description: "",
       title: "",
+      imgBattlePlan: [],
+      imgBattlePlanMission: "",
     };
   },
 
   mounted() {
     this.fetchMissions();
+    this.battleplan();
   },
   methods: {
+    battleplan() {
+      this.imgBattlePlan = [budapest, tourEiffel, siegeCia, , renault];
+    },
+
     fetchMissions() {
       axios
         .get("https://fsfahuwxzvtcnnxnzrtz.supabase.co/rest/v1/scenarios", {
@@ -185,6 +196,7 @@ export default {
       this.modalOpen = true;
       this.description = this.mission[id].description;
       this.title = this.mission[id].title;
+      this.imgBattlePlanMission = this.imgBattlePlan[id];
     },
     closeModal() {
       this.modalOpen = false;
@@ -273,7 +285,9 @@ img.image-container:hover {
   width: 46vw;
 }
 
-.modal-container, .suspects-list, .city-locations{
+.modal-container,
+.suspects-list,
+.city-locations {
   overflow: scroll;
   height: 50vh;
   margin-top: 9vh;
