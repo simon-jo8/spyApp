@@ -44,7 +44,7 @@
         : {{ title }}
       </p>
       <p class="teammate-name">
-        <span>Coéquipier(re)</span>
+        <span>Coéquipier(e)</span>
         : Kimberley
       </p>
       <div class="mission-description">
