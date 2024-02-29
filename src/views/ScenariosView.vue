@@ -252,10 +252,8 @@ img.image-container:hover {
 .modal-content {
   background-color: rgba(0, 0, 0, 0.3);
   padding: 15px 30px 30px 30px;
-  border: 1px solid #888;
   width: 52vw;
   height: 65vh;
-  position: relative;
   z-index: 0;
   border: 5px solid #22beef;
   border-top: 5px dashed #22beef;
@@ -263,6 +261,8 @@ img.image-container:hover {
   outline: 5px solid #22beef;
   outline-offset: -17px;
   border-radius: 30px;
+  overflow: scroll;
+  //overflow: hidden;
 }
 
 .modal-header {
@@ -278,8 +278,8 @@ img.image-container:hover {
   justify-content: center;
   width: 100px;
   height: 100px;
-  bottom: -40px;
-  right: -40px;
+  bottom: 111px;
+  right: 249px;
   border: 5px dashed #22beef;
   border-radius: 300px;
   background: black;
@@ -362,13 +362,11 @@ span.icon-location {
 .mission-description {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: start;
 }
 
 .mission-description p {
-  max-width: 80%;
-  overflow: auto;
-  max-height: 400px;
+  max-width: 60%;
 }
 
 .mission-description p span {
